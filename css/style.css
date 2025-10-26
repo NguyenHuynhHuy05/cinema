@@ -234,27 +234,59 @@ main {
     font-size: 0.9rem;
     color: #888;
 }
-/* Trong file css/style.css hoặc style-main.css */
+/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 3%;
+        z-index: 1000; 
+    }
+
+    .navigation {
+        flex-wrap: wrap; 
+        gap: 15px; 
+        margin-top: 10px;
+        width: 100%; 
+        justify-content: flex-start;
+    }
+    
+    .navigation a {
+        font-size: 0.9rem;
+        margin-right: 20px; 
+    }
+    
+    .navigation .button-login {
+        font-size: 0.9rem;
+        margin-left: auto; 
+    }
+}
+
 
 @media (max-width: 600px) {
-    header {
-        padding: 10px 15px;
-    }
     
-    /* Ẩn các liên kết điều hướng chính */
+
     .navigation {
-        display: none; 
-    }
-    
-    /* Chỉ hiển thị logo và nút Thành viên (giả định bạn sẽ thêm một nút menu hamburger) */
-    header img {
-        height: 30px;
+        flex-direction: column;
+        align-items: center; 
+        gap: 5px; 
     }
 
-    /* Nếu bạn muốn hiển thị nút Thành viên */
-    .button-login {
-        display: block; 
+    .navigation a, .navigation .button-login {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 8px 0; 
     }
     
-    /* Cần thêm một icon menu hamburger vào HTML và CSS để hiển thị nó ở đây */
+    .navigation .button-login {
+        margin-top: 10px;
+        padding: 10px;
+    }
+    
+    header.scrolled {
+        background-color: black; 
+    }
 }
