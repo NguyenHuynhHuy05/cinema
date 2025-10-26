@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color:#a0a0a0;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+/* LOGO */
+header img {
+  width: 30px;
+  height: auto;
+}
+header img:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+/* NAVIGATION */
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Cho phép tự xuống hàng nếu nhỏ */
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+  margin-right: 100px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#8B0000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  background: #8B0000;
+}
+
+/* NÚT LOGIN */
+.navigation .button-login {
+  padding: 8px 20px;
+  background: transparent;
+  background: #8B0000;
+  border: 2px solid #8B0000;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+header.scrolled {
+    background-color: black; 
+    border-radius: 0 0 30px 30px;
+}
+.navigation .button-login:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+main {
+  margin-top: 100px;
+}
+
+/* RESPONSIVE — KHI THU NHỎ */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 3%;
+  }
+
+.navigation {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 10px;
+  }
+
+.navigation a, .navigation .button-login {
+    font-size: 0.9rem;
+  }
+}
+
+/* MÀN HÌNH RẤT NHỎ */
+@media (max-width: 600px) {
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation a, .navigation .button-login {
+    display: block;
+    width: 100%;
+  }
+}
+/* FOOTER */
+.footer-container {
+    background-color: #141414; 
+    color: #a0a0a0;          
+    padding: 60px 0 0 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+.footer-section {
+    flex: 1; 
+    min-width: 220px; 
+    margin-bottom: 30px;
+}
+
+.footer-section.about .footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    color: #ffffff; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #e50914;
+}
+
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 12px;
+}
+.footer-section.links ul li a {
+    color: #a0a0a0; 
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-section.links ul li a:hover {
+    color: #ffffff; 
+    padding-left: 5px; 
+}
+.title:hover{
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#8B0000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.social-icons {
+    display: flex;
+    gap: 15px; 
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: #a0a0a0; 
+    font-size: 1.8rem; 
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e50914; 
+    transform: translateY(-3px); 
+}
+.footer-bottom {
+    background-color: #0a0a0a; 
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px; 
+    border-top: 1px solid #2a2a2a; 
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+/* Trong file css/style.css hoặc style-main.css */
+
+@media (max-width: 600px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    /* Ẩn các liên kết điều hướng chính */
+    .navigation {
+        display: none; 
+    }
+    
+    /* Chỉ hiển thị logo và nút Thành viên (giả định bạn sẽ thêm một nút menu hamburger) */
+    header img {
+        height: 30px;
+    }
+
+    /* Nếu bạn muốn hiển thị nút Thành viên */
+    .button-login {
+        display: block; 
+    }
+    
+    /* Cần thêm một icon menu hamburger vào HTML và CSS để hiển thị nó ở đây */
+}

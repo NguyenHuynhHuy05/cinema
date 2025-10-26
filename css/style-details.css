@@ -1,0 +1,212 @@
+
+.movie-details-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 120px 20px 40px 20px; 
+    color: #fff; 
+}
+
+
+.details-poster {
+    width: 100%;
+    max-width: 300px; 
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #333;
+    flex-shrink: 0; 
+}
+
+
+.details-info {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+
+.details-info h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff; 
+    line-height: 1.2;
+}
+
+
+.details-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+
+.details-info p {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #ccc; 
+}
+
+
+.meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.meta-tags .tag {
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.5rem !important;
+    font-weight: 500;
+}
+.meta-tags .tag.age {
+    background-color:  #e50914;
+    font-weight: bold;
+}
+
+
+.meta-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.meta-category .tag {
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    padding: 6px 14px;
+    border-radius: 20px; 
+    font-size: 0.5rem !important;
+    transition: all 0.3s ease;
+}
+.meta-category .tag:hover {
+    background-color: var(--main-color, #e50914);
+    border-color: var(--main-color, #e50914);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.watch-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px 40px 20px;
+}
+
+
+.watch-section .heading {
+    padding-left: 0; 
+}
+
+
+.video-player-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    border: 2px solid #333;
+}
+
+.video-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+@media (max-width: 768px) {
+    .movie-details-container {
+        padding-top: 100px; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .details-poster {
+        height: 420px; 
+    }
+
+    .details-info h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .meta-tags, .meta-category {
+        justify-content: center; 
+    }
+
+    .details-info h3 {
+        text-align: center;
+    }
+}
+
+.meta-tags .tag.imdb {
+    background: #f5c518; 
+    color: #000;
+    font-weight: 700;
+
+    
+    display: inline-flex; 
+    align-items: center;
+    gap: 5px; 
+}
+
+
+.meta-tags .tag.imdb .bx {
+    font-size: 0.9rem;
+}
+/* Trong file css/style-details.css */
+
+/* --- Dưới 768px (Điện thoại và Máy tính bảng nhỏ) --- */
+@media (max-width: 768px) {
+    /* Ẩn bớt lề (padding) chính */
+    .page-container {
+        padding: 0 10px; 
+    }
+
+    /* Bố cục chính: Hiển thị poster phía trên, thông tin phía dưới */
+    .movie-details-container {
+        flex-direction: column; /* Chuyển từ ngang sang dọc */
+        padding-top: 20px;
+    }
+    
+    /* Poster: Giảm chiều rộng tối đa */
+    .details-poster {
+        width: 100%;
+        max-width: 300px; 
+        margin: 0 auto 20px auto; 
+        height: auto;
+    }
+
+    /* Tiêu đề: Tăng kích thước phông chữ cho dễ đọc hơn trên mobile */
+    #movie-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    /* Thẻ thông tin (score, rating, year, duration): căn giữa */
+    .meta-tags {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Video Player: Đảm bảo iframe full chiều rộng */
+    .video-player-wrapper {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin phim - mephim.vn</title>
+    <link rel="icon" type="image/png" href="./image/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/style-details.css">  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="page-container">
+        
+        <header>
+            <a href="main.html">
+                <img src="./image/logo.png" alt="mephim.vn logo">
+            </a>
+            <nav class="navigation">
+                <a href="main.html">Trang chủ</a>
+                <a href="main.html#anime">Thể loại</a>
+                <a href="#">Quốc gia</a>
+                <a href="#">Thêm</a>
+                <button class="button-login">Thành viên</button>
+            </nav>
+        </header>
+
+        <section class="movie-details-container">
+            <img src="" alt="Poster" class="details-poster" id="movie-poster">
+
+            <div class="details-info">
+                <h1 id="movie-title">Đang tải...</h1>
+                
+                <div class="meta-tags">
+                    <span class="tag imdb" id="movie-score"></span> 
+                    <span class="tag age" id="movie-rating"></span>
+                    <span class="tag time" id="movie-year"></span>
+                    <span class="tag time" id="movie-duration"></span>
+                </div>
+
+                <div class="meta-category" id="movie-genre">
+                    </div>
+                
+                <h3>Nội dung</h3>
+                <p id="movie-description"></p>
+                
+                <h3>Quốc Gia</h3>
+                <p id="movie-national"></p>
+
+                <h3>Đạo diễn</h3>
+                <p id="movie-director"></p>
+
+                <h3>Diễn viên</h3>
+                <p id="movie-actors"></p>
+            </div>
+        </section>
+
+        <section class="watch-section">
+            <h2 class="heading">Trailer</h2>
+            <div class="video-player-wrapper">
+                <iframe id="movie-video-player" 
+                        src="" 
+                        title="Movie Player"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+          <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <a href="main.html" class="footer-logo">
+                    <img src="./image/logo.png" alt="mephim.vn Logo">
+                </a>
+                <p>Mephim.vn - Trang web xem phim trực tuyến hàng đầu, mang đến trải nghiệm giải trí đỉnh cao với hàng ngàn bộ phim và chương trình truyền hình hấp dẫn.</p>
+            </div>
+            <div class="footer-section social">
+                <h4>Nhãn phân loại phim</h4>
+                  <ul>
+                    <li>P : Phim được phổ biến mọi lứa tuổi</li>
+                    <li>K : Phim được phổ biến đến khán giả dưới 13 tuổi và có người bảo hộ đi cùng</li>
+                    <li>T13 : Phim được phổ biến đến khán giả từ 13 tuổi trở lên</li>
+                    <li>T16 : Phim được phổ biến đến khán giả từ 16 tuổi trở lên</li>
+                    <li>T18 : Phim được phổ biến đến khán giả từ 18 tuổi trở lên</li>
+              
+                </ul>
+            </div>
+            <div class="footer-section links">
+                <h4>Thông Tin</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Liên hệ quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <div class="social-icons">
+                    <a href="https" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 mephim.vn. Bảo lưu mọi quyền.</p>
+        </div>
+    </footer>
+
+    </div>
+
+    <script src="js/detail-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+/* === main.css – PHẦN NỘI DUNG CHÍNH (HOME / SLIDER) === */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+body{
+  background-color: #000;
+}
+.home {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.home .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.home .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(33%);
+  backdrop-filter: blur(4px);
+}
+.home-text {
+  z-index: 1000;
+  padding: 20% 5%;
+}
+.home-text span {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.home-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.home-text h1:hover{
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+
+.home-text .btn {
+  display: inline-block;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: 0.8rem !important;
+}
+.btn:hover {
+  transform: scale(1.2)
+}
+/* HOME1 */
+.home1 {
+  position: relative;
+  top: -160px;
+  opacity: 0.9;
+  font-weight: 1000;
+  font-size: 2.5rem !important;
+  letter-spacing: 1.5px;
+   line-height: 1 !important;
+  text-transform: uppercase;
+}
+.home-info {
+  position: relative;
+  gap: 8px; 
+  align-items: center;
+  top: -160px;
+}
+.home-info:hover{
+    transform: scale(1.01);
+    transition: 0.3s ease;
+}
+.tag {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.4rem !important;
+    font-weight: 300 !important;
+}
+
+.tag.imdb {
+  border: 1.5px solid #E6B91E;
+  color: #E6B91E;
+}
+
+.tag.age{
+  background-color: #fff;
+  color: #000;
+}
+
+.tag.time {
+  border: 1.5px solid #ccc;
+  color: #fff;
+}
+
+.home-category {
+  position: relative;
+  gap: 8px; 
+  align-items: center;
+  top: -170px;
+}
+.home-category:hover{
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+.tag.category{
+  background-color: #141f2e;
+  color: #ffffff;
+}
+#home1-span {
+  position: relative;
+  top: -145px;
+  left: 5px;
+  opacity: 0.8;
+  font-size: 0.rem;
+}
+
+#home1-btn {
+  background:  #8B0000;
+  position: relative;
+  top: -160px;
+  opacity: 0.8;
+  font-size: 0.7rem;
+}
+.detail {
+  position: relative;
+  top: -170px !important;
+  background: rgba(255, 255, 255, 0.05); 
+  padding: 20px 24px;
+  border-radius: 12px;
+  color: #fff; 
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.8; 
+  max-width: 500px;
+  border-left: 4px solid   #8B0000; 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+}
+
+.detail p {
+  margin: 0;
+  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
+}
+
+.detail:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px #ccc;
+}
+/* HOME2 */
+.home2{
+    font-family: 'Great Vibes', cursive;
+    position: relative;
+    top: -120px;
+    left: 0px;
+    color: #fff!important;
+    font-weight: 1000;
+    opacity: 0.9;
+    font-size: 2rem !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#home2-info{
+    top:-90px;
+    left: 0px;
+}
+#home2-category{
+  top:-110px;
+}
+#home2-btn {
+  background: #fff !important;
+  position: relative;
+  top: -110px;
+  color:#001F3F;
+  opacity: 0.8;
+  font-size: 0.7rem;
+}
+#home2-detail{
+  border-left: 4px solid  #fff;
+  top:-120px !important; 
+}
+/* HOME3 */
+.home3{
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  top: -120px;
+  left: 0px;
+  font-weight: 1000;
+  font-size:2rem !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#home3-btn {
+  background-color: #33FFFF;
+  position: relative;
+  top: -110px;
+  color:#001F3F;
+  opacity: 0.8;
+  font-size: 0.7rem;
+}
+#home3-info{
+    top:-100px;
+    left: 0px;
+}
+#home3-category{
+  top:-110px;
+}
+#home3-detail{
+  border-left: 4px solid  #33FFFF; 
+   top:-120px !important; 
+}
+/* HOME4 */
+.home4{
+   font-family: 'Zen Dots', sans-serif;
+   position: relative;
+    top: -120px;
+    left: 0px;
+    font-weight: 1000;
+    opacity: 0.9;
+    font-size: 1.5rem !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#home4-info{
+    top:-120px;
+    left: 0px;
+}
+#home4-btn {
+  background: #FF8C00!important;
+  position: relative;
+  top: -110px;
+  color:#001F3F;
+  opacity: 0.8;
+  font-size: 0.7rem;
+}
+#home4-detail{
+  border-left: 4px solid #FF8C00;
+  top:-120px !important; 
+}
+#home4-info{
+    top:-100px;
+    left: 0px;
+}
+#home4-category{
+  top:-110px;
+}
+/* HOME5 */
+.home5{
+   font-family: 'Great Vibes', cursive;
+   position: relative;
+    top: -120px;
+    left: 0px;
+    font-weight: 1000;
+    opacity: 0.9;
+    font-size: 2.rem !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#home5-info{
+    top:-120px;
+    left: 0px;
+}
+#home5-btn {
+  background: #FF6A6A !important;
+  position: relative;
+  top: -110px;
+  color:#001F3F;
+  opacity: 0.8;
+  font-size: 0.7rem;
+}
+#home5-detail{
+  border-left: 4px solid  #FF6A6A;
+  top:-120px !important; 
+}
+#home5-info{
+    top:-100px;
+    left: 0px;
+}
+#home5-category{
+  top:-110px;
+}
+.home .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 0.2rem;
+  background: #fff;
+  opacity: 1;
+}
+
+.home .swiper-pagination-bullet-active {
+  width: 1.5rem;
+  background: #8B0000;
+}
+.heading{
+    color: white;
+    font-size: 20px;
+    padding: 10px 5px;
+}
+.movie-container {
+  max-width: 968px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.box .box-img{
+  width: 100%;
+  height: 270px;
+}
+.box .box-img img{
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+.box .box-img img:hover{
+  transform: translateY(-30px);
+  transition: 0.2s all linear;
+}
+.box h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.box span{
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+/* CHI TIẾT FILM */
+.movie-box-link {
+    text-decoration: none;
+    color: inherit; /* Kế thừa màu chữ từ thẻ cha */
+    display: block; /* Đảm bảo link chiếm toàn bộ box */
+}
+/* ================================================= */
+/* === RESPONSIVE DESIGN (Media Queries) === */
+/* ================================================= */
+
+/* --- 1. Thiết bị nhỏ (Small Devices/Mobile: Max 600px) --- */
+@media (max-width: 600px) {
+    
+    /* Cấu hình chung cho toàn bộ phần Home/Slider */
+    .home-text {
+        padding: 40% 5% 5% 5%; /* Giảm padding trên cùng, tăng cho tiêu đề dễ nhìn */
+    }
+
+    /* Giảm kích thước Tiêu đề chính (h1) */
+    .home-text h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Giảm kích thước tags và khoảng cách */
+    .tag {
+        padding: 4px 8px;
+        font-size: 0.7rem !important; /* Giữ chữ dễ đọc hơn */
+    }
+
+    /* Giảm kích thước và điều chỉnh vị trí HOME1 */
+    .home1 {
+        font-size: 1.8rem !important;
+        top: -120px; /* Giảm khoảng cách đẩy lên */
+    }
+
+    /* Điều chỉnh vị trí của các khối thông tin */
+    .home-info,
+    .home-category {
+        top: -120px;
+        flex-wrap: wrap; /* Cho phép các tags nhảy dòng nếu cần */
+    }
+    
+    /* Điều chỉnh nút Chi tiết */
+    #home1-btn {
+        top: -120px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.65rem;
+    }
+
+    /* Điều chỉnh khung mô tả (detail) */
+    .detail {
+        top: -120px !important;
+        padding: 15px;
+        font-size: 0.75rem;
+        max-width: 90%; /* Chiếm gần hết chiều rộng màn hình */
+    }
+    
+    /* Điều chỉnh tiêu đề các phần (Featured, Trending,...) */
+    .heading {
+        font-size: 18px;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    /* Thay đổi bố cục Danh sách phim từ grid thành 2 cột */
+    .movie-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2-3 cột trên mobile */
+        margin-top: 1rem;
+        padding: 0 10px;
+        gap: 0.8rem;
+    }
+
+    /* Điều chỉnh kích thước poster trong danh sách */
+    .box .box-img {
+        height: 220px;
+    }
+    
+    /* Vô hiệu hóa hiệu ứng hover trên mobile để tránh lỗi*/
+    .box .box-img img:hover {
+        transform: translateY(0);
+    }
+    .home-text h1:hover, .home-info:hover, .home-category:hover, .detail:hover {
+        transform: scale(1);
+    }
+    .btn:hover {
+        transform: scale(1);
+    }
+}
+
+
+/* --- 2. Máy tính bảng (Tablet: Max 992px) --- */
+@media (max-width: 992px) {
+    
+    /* Cấu hình chung cho Header và Container */
+    .movie-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3-4 cột trên tablet */
+        max-width: 90%;
+    }
+    
+    /* Điều chỉnh Tiêu đề chính */
+    .home-text h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Điều chỉnh HOME1 */
+    .home1 {
+        font-size: 2.2rem !important;
+    }
+    
+    /* Điều chỉnh khung mô tả (detail) */
+    .detail {
+        max-width: 450px;
+    }
+
+}
