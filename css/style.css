@@ -50,8 +50,9 @@ header img:hover {
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
-    /* ĐÃ KHẮC PHỤC LỖI GÂY TRÀN MÀN HÌNH */
+    /* Xóa margin-right: 100px; để không bị tràn trên desktop/mobile */
     margin-right: 30px;
+    /* Thử đặt một giá trị nhỏ hơn cho desktop */
 }
 
 .navigation a::after {
