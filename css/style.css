@@ -1,133 +1,172 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  color:#a0a0a0;
+    min-height: 100vh;
+    color: #a0a0a0;
 }
 
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    /* Đã tăng z-index lên rất cao để đảm bảo Header luôn hiển thị */
 }
 
 /* LOGO */
 header img {
-  width: 30px;
-  height: auto;
+    width: 30px;
+    height: auto;
 }
-header img:hover{
-  transform: scale(1.1);
-  transition: 0.3s ease;
+
+header img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
 }
 
 /* NAVIGATION */
 .navigation {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap; /* Cho phép tự xuống hàng nếu nhỏ */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navigation a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s;
-  margin-right: 100px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    /* ĐÃ KHẮC PHỤC LỖI GÂY TRÀN MÀN HÌNH */
+    margin-right: 30px;
 }
 
 .navigation a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background:#8B0000;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .3s;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #8B0000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
 }
 
 .navigation a:hover::after {
-  transform: scaleX(1);
-  background: #8B0000;
+    transform: scaleX(1);
+    background: #8B0000;
 }
 
 /* NÚT LOGIN */
 .navigation .button-login {
-  padding: 8px 20px;
-  background: transparent;
-  background: #8B0000;
-  border: 2px solid #8B0000;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+    padding: 8px 20px;
+    background: transparent;
+    background: #8B0000;
+    border: 2px solid #8B0000;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
 header.scrolled {
-    background-color: black; 
+    background-color: black;
     border-radius: 0 0 30px 30px;
 }
+
 .navigation .button-login:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease;
+    transform: scale(1.1);
+    transition: 0.3s ease;
 }
 
 main {
-  margin-top: 100px;
+    margin-top: 100px;
 }
 
-/* RESPONSIVE — KHI THU NHỎ */
+/* ================================================= */
+/* === RESPONSIVE HEADER (Đã Tinh Chỉnh) === */
+/* ================================================= */
+
+/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
 @media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 3%;
-  }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 3%;
+        z-index: 1000;
+    }
 
-.navigation {
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 10px;
-  }
+    .navigation {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
 
-.navigation a, .navigation .button-login {
-    font-size: 0.9rem;
-  }
+    .navigation a {
+        font-size: 0.9rem;
+        margin-right: 15px;
+    }
+
+    .navigation .button-login {
+        font-size: 0.9rem;
+        margin-left: auto;
+    }
 }
 
-/* MÀN HÌNH RẤT NHỎ */
+
+/* --- 2. Điện thoại (Mobile: Max 600px) --- */
 @media (max-width: 600px) {
-  .navigation {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .navigation a, .navigation .button-login {
-    display: block;
-    width: 100%;
-  }
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .navigation a,
+    .navigation .button-login {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 8px 0;
+    }
+
+    .navigation .button-login {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    header.scrolled {
+        background-color: black;
+    }
 }
-/* FOOTER */
+
+/* ================================================= */
+/* === FOOTER === */
+/* ================================================= */
+
 .footer-container {
-    background-color: #141414; 
-    color: #a0a0a0;          
+    background-color: #141414;
+    color: #a0a0a0;
     padding: 60px 0 0 0;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -136,17 +175,17 @@ main {
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px; 
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; 
+    padding: 0 20px;
 }
 
 .footer-section {
-    flex: 1; 
-    min-width: 220px; 
+    flex: 1;
+    min-width: 220px;
     margin-bottom: 30px;
 }
 
@@ -156,13 +195,14 @@ main {
 }
 
 .footer-section h4 {
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 10px;
 }
+
 .footer-section h4::after {
     content: '';
     position: absolute;
@@ -182,51 +222,55 @@ main {
 .footer-section.links ul li {
     margin-bottom: 12px;
 }
+
 .footer-section.links ul li a {
-    color: #a0a0a0; 
+    color: #a0a0a0;
     text-decoration: none;
     transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .footer-section.links ul li a:hover {
-    color: #ffffff; 
-    padding-left: 5px; 
+    color: #ffffff;
+    padding-left: 5px;
 }
-.title:hover{
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background:#8B0000;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .3s;
+
+.title:hover {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #8B0000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
 }
+
 .social-icons {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
     margin-bottom: 25px;
 }
 
 .social-icons a {
-    color: #a0a0a0; 
-    font-size: 1.8rem; 
+    color: #a0a0a0;
+    font-size: 1.8rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #e50914; 
-    transform: translateY(-3px); 
+    color: #e50914;
+    transform: translateY(-3px);
 }
+
 .footer-bottom {
-    background-color: #0a0a0a; 
+    background-color: #0a0a0a;
     text-align: center;
     padding: 20px;
-    margin-top: 30px; 
-    border-top: 1px solid #2a2a2a; 
+    margin-top: 30px;
+    border-top: 1px solid #2a2a2a;
 }
 
 .footer-bottom p {
@@ -234,59 +278,32 @@ main {
     font-size: 0.9rem;
     color: #888;
 }
-/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
-@media (max-width: 900px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 3%;
-        z-index: 1000; 
-    }
 
-    .navigation {
-        flex-wrap: wrap; 
-        gap: 15px; 
-        margin-top: 10px;
-        width: 100%; 
-        justify-content: flex-start;
-    }
-    
-    .navigation a {
-        font-size: 0.9rem;
-        margin-right: 20px; 
-    }
-    
-    .navigation .button-login {
-        font-size: 0.9rem;
-        margin-left: auto; 
-    }
-}
-
+/* ================================================= */
+/* === RESPONSIVE FOOTER (Đã Thêm) === */
+/* ================================================= */
 
 @media (max-width: 600px) {
-    
 
-    .navigation {
+    /* Đảm bảo Footer Content chuyển sang dạng cột */
+    .footer-content {
         flex-direction: column;
-        align-items: center; 
-        gap: 5px; 
+        /* Chuyển từ ngang sang dọc */
+        gap: 25px;
+        padding: 0 15px;
+        /* Giảm lề ngang */
     }
 
-    .navigation a, .navigation .button-login {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-right: 0;
-        margin-left: 0;
-        padding: 8px 0; 
+    /* Đảm bảo mỗi phần chiếm toàn bộ chiều rộng */
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 0;
+        text-align: left;
     }
-    
-    .navigation .button-login {
-        margin-top: 10px;
-        padding: 10px;
-    }
-    
-    header.scrolled {
-        background-color: black; 
+
+    /* Điều chỉnh bản quyền */
+    .footer-bottom {
+        padding: 15px;
+        font-size: 0.8rem;
     }
 }
