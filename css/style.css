@@ -22,8 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 9999;
-    /* Đã tăng z-index lên rất cao để đảm bảo Header luôn hiển thị */
+    z-index: 99;
 }
 
 /* LOGO */
@@ -42,6 +41,7 @@ header img:hover {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    /* Cho phép tự xuống hàng nếu nhỏ */
 }
 
 .navigation a {
@@ -50,9 +50,7 @@ header img:hover {
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
-    /* Xóa margin-right: 100px; để không bị tràn trên desktop/mobile */
-    margin-right: 30px;
-    /* Thử đặt một giá trị nhỏ hơn cho desktop */
+    margin-right: 100px;
 }
 
 .navigation a::after {
@@ -99,72 +97,54 @@ main {
     margin-top: 100px;
 }
 
-/* ================================================= */
-/* === RESPONSIVE HEADER (Đã Tinh Chỉnh) === */
-/* ================================================= */
-
-/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
+/* RESPONSIVE — KHI THU NHỎ */
 @media (max-width: 900px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        /* ĐÃ XÓA: flex-direction: column; - Giữ nguyên thanh ngang */
+        align-items: center; /* Đảm bảo căn giữa theo chiều dọc */
         padding: 10px 3%;
         z-index: 1000;
     }
 
     .navigation {
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .navigation a {
-        font-size: 0.9rem;
-        margin-right: 15px;
-    }
-
-    .navigation .button-login {
-        font-size: 0.9rem;
-        margin-left: auto;
-    }
-}
-
-
-/* --- 2. Điện thoại (Mobile: Max 600px) --- */
-@media (max-width: 600px) {
-
-    .navigation {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+        /* ĐÃ GIẢM: flex-wrap: wrap; Giữ nguyên */
+        gap: 15px; /* Giảm khoảng cách cho màn hình nhỏ */
+        /* margin-top: 10px; Bỏ vì nó chỉ cần thiết khi header là column */
+        width: auto;
+        justify-content: center;
     }
 
     .navigation a,
     .navigation .button-login {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-right: 0;
-        margin-left: 0;
-        padding: 8px 0;
-    }
-
-    .navigation .button-login {
-        margin-top: 10px;
-        padding: 10px;
-    }
-
-    header.scrolled {
-        background-color: black;
+        font-size: 0.9rem;
     }
 }
 
-/* ================================================= */
-/* === FOOTER === */
-/* ================================================= */
+/* MÀN HÌNH RẤT NHỎ */
+@media (max-width: 600px) {
+    /* Đã XÓA các quy tắc làm menu xếp dọc. Header sẽ được giữ nguyên bố cục thanh ngang. */
+    /* Nếu menu vẫn bị tràn, nó sẽ tự động xuống dòng nhờ flex-wrap: wrap ở trên. */
+    .navigation {
+        gap: 8px; /* Giảm gap tối đa */
+        /* Cho phép các mục tự xuống hàng, nhưng vẫn nằm ngang */
+    }
 
+    .navigation a,
+    .navigation .button-login {
+        font-size: 0.8rem;
+        padding: 6px 10px; /* Giảm padding cho nút login */
+        margin-right: 0; /* Đảm bảo không có margin thừa */
+    }
+
+    header {
+        flex-direction: column; 
+        align-items: center;
+    } 
+}
+
+/* Các đoạn CSS cho Footer giữ nguyên ... */
+
+/* FOOTER */
 .footer-container {
     background-color: #141414;
     color: #a0a0a0;
@@ -280,31 +260,64 @@ main {
     color: #888;
 }
 
-/* ================================================= */
-/* === RESPONSIVE FOOTER (Đã Thêm) === */
-/* ================================================= */
+/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 3%;
+        z-index: 1000;
+    }
+
+/* style.css - (Dòng 31) */
+.navigation {
+    display: flex;
+    align-items: center;
+    /* THÊM GAP ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC MỤC */
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+/* style.css - (Dòng 38) */
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    /* ĐÃ BỎ: margin-right: 100px; */
+}
+    .navigation .button-login {
+        font-size: 0.9rem;
+        margin-left: auto;
+    }
+}
+
 
 @media (max-width: 600px) {
 
-    /* Đảm bảo Footer Content chuyển sang dạng cột */
-    .footer-content {
+
+    .navigation {
         flex-direction: column;
-        /* Chuyển từ ngang sang dọc */
-        gap: 25px;
-        padding: 0 15px;
-        /* Giảm lề ngang */
+        align-items: center;
+        gap: 5px;
     }
 
-    /* Đảm bảo mỗi phần chiếm toàn bộ chiều rộng */
-    .footer-section {
-        min-width: 100%;
-        margin-bottom: 0;
-        text-align: left;
+    .navigation a,
+    .navigation .button-login {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 8px 0;
     }
 
-    /* Điều chỉnh bản quyền */
-    .footer-bottom {
-        padding: 15px;
-        font-size: 0.8rem;
+    .navigation .button-login {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    header.scrolled {
+        background-color: black;
     }
 }
