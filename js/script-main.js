@@ -61,26 +61,4 @@ window.addEventListener("scroll", () => {
         header.classList.remove("scrolled");
     }
 });
-
-
-document.addEventListener('DOMContentLoaded', () => {
-     const hamburgerButton = document.getElementById('hamburger-button');
-     const mainNav = document.getElementById('main-nav');
-    if (hamburgerButton && mainNav) {
-        hamburgerButton.addEventListener('click', () => {
-            mainNav.classList.toggle('mobile-menu-active');
-
-            
-            const icon = hamburgerButton.querySelector('i');
-            if (mainNav.classList.contains('mobile-menu-active')) {
-                icon.classList.remove('bx-menu');
-                icon.classList.add('bx-x');
-            } else {
-                icon.classList.remove('bx-x');
-                icon.classList.add('bx-menu');
-            }
-        });
-    } else {
-        console.error("Hamburger button or main navigation not found!");
-    }
-});
+ 

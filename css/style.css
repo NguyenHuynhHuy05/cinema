@@ -318,17 +318,7 @@ main {
     header.scrolled {
         background-color: black;
     }
- 
-.hamburger-menu {
-    display: none; 
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem; 
-    cursor: pointer;
-    z-index: 1001; 
-}
-
+  
 
 @media (max-width: 768px) { 
  
