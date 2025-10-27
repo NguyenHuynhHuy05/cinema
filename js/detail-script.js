@@ -1,16 +1,16 @@
-// Nội dung file: js/detail-script.js
 
-// Đường dẫn TƯƠNG ĐỐI đến file dữ liệu phim. 
-// LƯU Ý: Nếu file HTML và thư mục 'js' nằm cùng cấp, đường dẫn này là chính xác.
+
+
+
 const DATA_FILE_PATH = 'js/movie-data.json'; 
 
 document.addEventListener("DOMContentLoaded", () => {
     
     console.log("--- BẮT ĐẦU TẢI DỮ LIỆU PHIM VÀ THIẾT LẬP SỰ KIỆN ---");
 
-    // ===================================
-    // XỬ LÝ NÚT THÀNH VIÊN (LOGIN/REGISTER)
-    // ===================================
+    
+    
+    
     const loginButton = document.querySelector(".button-login"); 
     if (loginButton) {
         loginButton.addEventListener("click", () => {
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===================================
-    // XỬ LÝ TẢI DỮ LIỆU PHIM
-    // ===================================
+    
+    
+    
     fetch(DATA_FILE_PATH)
         .then(response => {
             if (!response.ok) {
@@ -44,13 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (movie) {
                     console.log("Thành công: Đã tìm thấy phim:", movie.P_TEN);
                     
-                    // ===================================
-                    // ĐIỀN DỮ LIỆU VÀO HTML
-                    // ===================================
+                    
+                    
+                    
                     document.title = movie.P_TEN + " - mephim.vn"; 
                     document.getElementById("movie-title").textContent = movie.P_TEN;
                     
-                    // 🖼️ XỬ LÝ POSTER (Vấn đề đường dẫn)
+                    
                     const posterElement = document.getElementById("movie-poster");
                     if (posterElement) {
                         posterElement.src = movie.P_POSTER;
@@ -59,34 +59,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     document.getElementById("movie-description").textContent = movie.P_MOTA;
                     
-                    // XỬ LÝ NHÃN MÀU ĐỎ
+                    
                     const ageTagElement = document.getElementById("movie-rating");
                     if (ageTagElement) {
-                        ageTagElement.textContent = movie.P_NHAN ? movie.P_NHAN.split(' ')[0] : 'ĐC'; // Nếu không có nhãn, đặt mặc định là 'ĐC'
+                        ageTagElement.textContent = movie.P_NHAN ? movie.P_NHAN.split(' ')[0] : 'ĐC'; 
                     }
                     
-                    // Điền Năm và Thời lượng
+                    
                     document.getElementById("movie-year").textContent = movie.P_NAMPH;
                     document.getElementById("movie-duration").textContent = movie.P_THOILUONG;
                     
-                    // 🎬 KHẮC PHỤC LỖI TRAILER (Đảm bảo logic đúng)
+                    
                     const trailerElement = document.getElementById("movie-video-player");
                     if (trailerElement) {
-                        // Gán đường dẫn Trailer cho thuộc tính src của IFRAME
+                        
                         trailerElement.src = movie.P_TRAILER; 
                         console.log("Đã gán Trailer:", movie.P_TRAILER);
                     } else {
                         console.error("LỖI: Không tìm thấy phần tử có ID 'movie-video-player' trong HTML.");
                     }
                     
-                    // Điền Đạo diễn và Diễn viên
+                    
                     document.getElementById("movie-director").textContent = movie.DD_ID ? movie.DD_ID : "Đang cập nhật"; 
                     document.getElementById("movie-actors").textContent = movie.P_DIENVIEN;
                     
-                    // Xử lý Quốc gia
+                    
                     document.getElementById("movie-national").textContent = movie.P_QUOCGIA;
 
-                    // Xử lý điểm (P_DIEM)
+                    
                     const scoreElement = document.getElementById("movie-score"); 
                     if (movie.P_DIEM && movie.P_DIEM > 0) {
                         scoreElement.innerHTML = `<i class='bx bxs-star'></i> ${movie.P_DIEM}`;
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scoreElement.style.color = '#fff'; 
                     }
 
-                    // XỬ LÝ GENRE (THỂ LOẠI)
+                    
                     const genreContainer = document.getElementById("movie-genre");
                     genreContainer.innerHTML = ""; 
                     if (movie.genre && movie.genre.length > 0) {
@@ -148,7 +148,7 @@ function handleMovieNotFound() {
     document.title = "Không tìm thấy phim - mephim.vn";
 }
 
-// THANH ĐIỀU HƯỚNG NỀN ĐEN KHI CUỘN
+
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header"); 
     if (window.scrollY > 50) {

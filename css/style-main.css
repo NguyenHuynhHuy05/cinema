@@ -1,4 +1,4 @@
-/* === main.css – PHẦN NỘI DUNG CHÍNH (HOME / SLIDER) === */
+
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 body{
   background-color: #000;
@@ -157,7 +157,7 @@ body{
 
 .detail p {
   margin: 0;
-  text-align: justify; /* căn đều hai bên cho chuyên nghiệp */
+  text-align: justify;
 }
 
 .detail:hover {
@@ -342,86 +342,83 @@ body{
 .box span{
   font-size: 13px;
   letter-spacing: 1.5px;
-}
-/* CHI TIẾT FILM */
+} 
 .movie-box-link {
     text-decoration: none;
-    color: inherit; /* Kế thừa màu chữ từ thẻ cha */
-    display: block; /* Đảm bảo link chiếm toàn bộ box */
+    color: inherit; 
+    display: block; 
 }
-/* ================================================= */
-/* === RESPONSIVE DESIGN (Media Queries) === */
-/* ================================================= */
 
-/* --- 1. Thiết bị nhỏ (Small Devices/Mobile: Max 600px) --- */
+
+ 
 @media (max-width: 600px) {
     
-    /* Cấu hình chung cho toàn bộ phần Home/Slider */
+   
     .home-text {
-        padding: 40% 5% 5% 5%; /* Giảm padding trên cùng, tăng cho tiêu đề dễ nhìn */
+        padding: 40% 5% 5% 5%; 
     }
 
-    /* Giảm kích thước Tiêu đề chính (h1) */
+    
     .home-text h1 {
         font-size: 1.8rem;
         margin-bottom: 0.5rem;
     }
     
-    /* Giảm kích thước tags và khoảng cách */
+    
     .tag {
         padding: 4px 8px;
-        font-size: 0.7rem !important; /* Giữ chữ dễ đọc hơn */
+        font-size: 0.7rem !important; 
     }
 
-    /* Giảm kích thước và điều chỉnh vị trí HOME1 */
+   
     .home1 {
         font-size: 1.8rem !important;
-        top: -120px; /* Giảm khoảng cách đẩy lên */
+        top: -120px; 
     }
 
-    /* Điều chỉnh vị trí của các khối thông tin */
+    
     .home-info,
     .home-category {
         top: -120px;
-        flex-wrap: wrap; /* Cho phép các tags nhảy dòng nếu cần */
+        flex-wrap: wrap; 
     }
     
-    /* Điều chỉnh nút Chi tiết */
+    
     #home1-btn {
         top: -120px;
         padding: 0.6rem 1.2rem;
         font-size: 0.65rem;
     }
 
-    /* Điều chỉnh khung mô tả (detail) */
+    
     .detail {
         top: -120px !important;
         padding: 15px;
         font-size: 0.75rem;
-        max-width: 90%; /* Chiếm gần hết chiều rộng màn hình */
+        max-width: 90%; 
     }
     
-    /* Điều chỉnh tiêu đề các phần (Featured, Trending,...) */
+    
     .heading {
         font-size: 18px;
         padding: 10px 15px;
         text-align: center;
     }
 
-    /* Thay đổi bố cục Danh sách phim từ grid thành 2 cột */
+    
     .movie-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2-3 cột trên mobile */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
         margin-top: 1rem;
         padding: 0 10px;
         gap: 0.8rem;
     }
 
-    /* Điều chỉnh kích thước poster trong danh sách */
+    
     .box .box-img {
         height: 220px;
     }
     
-    /* Vô hiệu hóa hiệu ứng hover trên mobile để tránh lỗi*/
+   
     .box .box-img img:hover {
         transform: translateY(0);
     }
@@ -434,26 +431,26 @@ body{
 }
 
 
-/* --- 2. Máy tính bảng (Tablet: Max 992px) --- */
+
 @media (max-width: 992px) {
     
-    /* Cấu hình chung cho Header và Container */
+    
     .movie-container {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3-4 cột trên tablet */
         max-width: 90%;
     }
     
-    /* Điều chỉnh Tiêu đề chính */
+   
     .home-text h1 {
         font-size: 2.2rem;
     }
 
-    /* Điều chỉnh HOME1 */
+   
     .home1 {
         font-size: 2.2rem !important;
     }
     
-    /* Điều chỉnh khung mô tả (detail) */
+   
     .detail {
         max-width: 450px;
     }

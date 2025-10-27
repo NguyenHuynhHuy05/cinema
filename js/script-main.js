@@ -1,4 +1,4 @@
-// Khởi tạo Swiper cho phần Home Slider
+
 var swiperHome = new Swiper(".home", {
     spaceBetween: 0,
     loop: true,
@@ -14,16 +14,12 @@ var swiperHome = new Swiper(".home", {
     preventClicks: false,
     preventClicksPropagation: false,
     noSwipingSelector: '.swiper-no-swiping',
+    touchRatio: 0.5, 
+    touchAngle: 10,  
     
-    // ===========================================
-    // ⚡️ ĐIỀU CHỈNH ĐỘ NHẠY KÉO (SWIPE) ⚡️
-    // ===========================================
-    touchRatio: 0.5, // Giảm độ nhạy kéo tổng thể (Mặc định là 1)
-    touchAngle: 10,  // Chỉ kéo ngang khi góc kéo nhỏ (ưu tiên cuộn dọc)
-    // ===========================================
 });
     
-// Khởi tạo Swiper cho các danh sách phim (movie-container)
+
 var swiperMovies = new Swiper(".movie-container", {
     spaceBetween: 20,
     loop: true,
@@ -35,13 +31,9 @@ var swiperMovies = new Swiper(".movie-container", {
     preventClicks: false,
     preventClicksPropagation: false,
     noSwipingSelector: '.swiper-no-swiping',
+    touchRatio: 0.5, 
+    touchAngle: 10,  
     
-    // ===========================================
-    // ⚡️ ĐIỀU CHỈNH ĐỘ NHẠY KÉO (SWIPE) ⚡️
-    // ===========================================
-    touchRatio: 0.5, // Giảm độ nhạy kéo tổng thể
-    touchAngle: 10,  // Ưu tiên cuộn dọc
-    // ===========================================
 
     breakpoints: {
         0: {
@@ -59,8 +51,8 @@ var swiperMovies = new Swiper(".movie-container", {
     },
 });
 
-// ... (phần code cuộn trang giữ nguyên)
-// THANH ĐIỀU HƯỚNG NỀN ĐEN KHI CUỘN
+
+
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header"); 
     if (window.scrollY > 50) {
@@ -69,22 +61,16 @@ window.addEventListener("scroll", () => {
         header.classList.remove("scrolled");
     }
 });
-// js/script-main.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (Your existing code for Swiper, Scroll Header, etc.) ...
-
-    // ===========================================
-    // HAMBURGER MENU TOGGLE
-    // ===========================================
-    const hamburgerButton = document.getElementById('hamburger-button');
-    const mainNav = document.getElementById('main-nav');
-
+     const hamburgerButton = document.getElementById('hamburger-button');
+     const mainNav = document.getElementById('main-nav');
     if (hamburgerButton && mainNav) {
         hamburgerButton.addEventListener('click', () => {
             mainNav.classList.toggle('mobile-menu-active');
 
-            // Optional: Change icon to 'X' when menu is open
+            
             const icon = hamburgerButton.querySelector('i');
             if (mainNav.classList.contains('mobile-menu-active')) {
                 icon.classList.remove('bx-menu');

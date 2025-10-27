@@ -169,22 +169,21 @@
 .meta-tags .tag.imdb .bx {
     font-size: 0.9rem;
 }
-/* Trong file css/style-details.css */
 
-/* --- Dưới 768px (Điện thoại và Máy tính bảng nhỏ) --- */
+
+/* ---(Điện thoại và Máy tính bảng nhỏ) --- */
 @media (max-width: 768px) {
-    /* Ẩn bớt lề (padding) chính */
-    .page-container {
+   .page-container {
         padding: 0 10px; 
     }
 
-    /* Bố cục chính: Hiển thị poster phía trên, thông tin phía dưới */
+    
     .movie-details-container {
-        flex-direction: column; /* Chuyển từ ngang sang dọc */
+        flex-direction: column; 
         padding-top: 20px;
     }
     
-    /* Poster: Giảm chiều rộng tối đa */
+  
     .details-poster {
         width: 100%;
         max-width: 300px; 
@@ -192,20 +191,20 @@
         height: auto;
     }
 
-    /* Tiêu đề: Tăng kích thước phông chữ cho dễ đọc hơn trên mobile */
+    
     #movie-title {
         font-size: 2.5rem;
         text-align: center;
         margin-bottom: 10px;
     }
     
-    /* Thẻ thông tin (score, rating, year, duration): căn giữa */
+    
     .meta-tags {
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    /* Video Player: Đảm bảo iframe full chiều rộng */
+   
     .video-player-wrapper {
         padding: 0 10px;
     }

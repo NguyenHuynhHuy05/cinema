@@ -260,7 +260,7 @@ main {
     color: #888;
 }
 
-/* --- 1. Máy tính bảng và màn hình nhỏ (Max 900px) --- */
+/* --- 1. Tương thích điện thoại --- */
 @media (max-width: 900px) {
     header {
         flex-direction: column;
@@ -268,12 +268,10 @@ main {
         padding: 10px 3%;
         z-index: 1000;
     }
-
-/* style.css - (Dòng 31) */
+ 
 .navigation {
     display: flex;
-    align-items: center;
-    /* THÊM GAP ĐỂ TẠO KHOẢNG CÁCH GIỮA CÁC MỤC */
+    align-items: center; 
     gap: 30px; 
     flex-wrap: wrap; 
 }
@@ -284,7 +282,7 @@ main {
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
-    /* ĐÃ BỎ: margin-right: 100px; */
+
 }
     .navigation .button-login {
         font-size: 0.9rem;
@@ -320,68 +318,63 @@ main {
     header.scrolled {
         background-color: black;
     }
-    /* ================================================= */
-/* === HAMBURGER MENU STYLES === */
-/* ================================================= */
-
-/* Hamburger Icon Button */
+ 
 .hamburger-menu {
-    display: none; /* Hidden by default on desktop */
+    display: none; 
     background: none;
     border: none;
     color: #fff;
-    font-size: 2rem; /* Size of the icon */
+    font-size: 2rem; 
     cursor: pointer;
-    z-index: 1001; /* Make sure it's above the nav */
+    z-index: 1001; 
 }
 
-/* --- Responsive Styles for Mobile (e.g., max-width: 768px) --- */
-@media (max-width: 768px) { /* Adjust breakpoint if needed */
 
-    /* Show Hamburger Icon */
+@media (max-width: 768px) { 
+ 
     .hamburger-menu {
-        display: block; /* Show the icon */
-        order: 3; /* Place it after logo and nav */
-        margin-left: auto; /* Push it to the right */
+        display: block; 
+        order: 3; 
+        margin-left: auto; 
     }
 
-    /* Hide Desktop Navigation Links initially */
+    
     .navigation {
-        /* Position for slide-in/drop-down effect */
+    
         position: fixed; 
         top: 0;
-        right: -100%; /* Start off-screen to the right */
-        width: 70%; /* Width of the menu */
-        height: 100vh; /* Full height */
-        background-color: rgba(0, 0, 0, 0.95); /* Dark background */
-        flex-direction: column; /* Stack links vertically */
-        justify-content: flex-start; /* Align links to the top */
-        align-items: center; /* Center links horizontally */
-        padding-top: 80px; /* Space from the top */
+        right: -100%;
+        width: 70%; 
+        height: 100vh; 
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: center;
+        padding-top: 80px; 
         gap: 20px;
-        transition: right 0.3s ease-in-out; /* Smooth transition */
+        transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
 
-    /* Style for when the mobile menu is active */
+    
     .navigation.mobile-menu-active {
-        right: 0; /* Slide the menu into view */
+        right: 0; 
     }
 
-    /* Style links inside the mobile menu */
+    
     .navigation a,
     .navigation .button-login {
-        display: block; /* Each link takes full width */
+        display: block; 
         width: 80%;
         text-align: center;
         padding: 10px 0;
         font-size: 1.1rem;
-        margin: 5px 0; /* Remove horizontal margin */
-        border-bottom: 1px solid #333; /* Separator */
+        margin: 5px 0; 
+        border-bottom: 1px solid #333; 
     }
     
     .navigation a::after {
-        display: none; /* Hide the desktop hover effect */
+        display: none; 
     }
 
     .navigation .button-login {
